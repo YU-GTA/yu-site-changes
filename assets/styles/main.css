@@ -436,7 +436,7 @@ body {
   font-size: .75rem;
   line-height: 133%;
   color: #786b6b;
-  opacity: .5;
+  opacity: .95;
   margin-top: 15%
 }
 .headerhbtext {
@@ -502,7 +502,7 @@ body {
   font-size: .75rem;
   line-height: 133%;
   color: #786b6b;
-  opacity: .5;
+  opacity: 0.95;
   margin-top: 17%
 }
 .headerabtext {
@@ -885,7 +885,7 @@ body {
   font-size: .75rem;
   line-height: 133%;
   color: #786b6b;
-  opacity: .5;
+  opacity: 0.95;
   margin-top: 18%
 }
 .headergitext {
@@ -1037,7 +1037,7 @@ body {
   float: right;
   margin-left: 5px
 }
-.active:after {
+ .active:after {
   content: "\276F";
   transform: rotate(270deg)
 }
@@ -1675,7 +1675,7 @@ body {
   line-height: 121%;
   display: block;
   padding-top: 20%;
-  color: #fff
+  color: #727272;
 }
 .tab button,
 .tabnumbertxt {
@@ -1701,7 +1701,7 @@ body {
   float: left;
   padding: 14px 16px;
   transition: .3s;
-  opacity: 30%
+  opacity: 55%
 }
 .six {
   margin-left: 4.75%
@@ -1714,6 +1714,9 @@ body {
 }
 .five {
   margin-left: 7.4%
+}
+.tab button.active {
+  color:#0058e8;
 }
 .tab button.active,
 .tab button:hover {
@@ -1800,7 +1803,7 @@ a.footerlink:active {
   width: 26px
 }
 .social1 {
-  margin-left: 35%
+  margin-left: 30%
 }
 .emailbutton,
 .emailinput {
@@ -1984,7 +1987,7 @@ a.footerlink:active {
   font-size: .75rem;
   line-height: 133%;
   color: #000;
-  opacity: .4;
+  opacity: .55;
   letter-spacing: .08em;
   text-transform: uppercase
 }
@@ -2151,7 +2154,7 @@ a.footerlink:active {
 .staffloc {
   font-family: Calluna;
   font-style: italic;
-  opacity: .3;
+  opacity: .55;
   margin-bottom: 5%
 }
 .eventgrid {
@@ -2174,7 +2177,7 @@ a.footerlink:active {
   font-style: normal;
   font-size: .75rem;
   line-height: 160%;
-  opacity: .3;
+  opacity: .55;
   letter-spacing: .08em;
   text-transform: uppercase
 }
@@ -2250,7 +2253,7 @@ a.footerlink:active {
   text-align: center;
   font-size: .75rem;
   line-height: 160%;
-  opacity: .3;
+  opacity: .55;
   letter-spacing: .08em;
   text-transform: uppercase
 }
@@ -2260,6 +2263,9 @@ a.footerlink:active {
   padding-left: 7.2%;
   padding-right: 7.2%;
   margin-bottom: 10%
+}
+.jobdate{
+  opacity: 0.55;
 }
 .jobdate,
 .jobtitle {
@@ -2295,8 +2301,8 @@ a.footerlink:active {
 }
 .jobdate {
   font-family: Calluna;
-  opacity: .3;
-  text-transform: uppercase
+  opacity: .55;
+  text-transform: uppercase;
 }
 .searchheader,
 .searchinput {
@@ -2470,6 +2476,14 @@ a.footerlink:active {
 }
 .search {
   padding-top: 2.3%
+}
+.jobdate.latest {
+  color:#5e60d5;
+  opacity: .95;
+}
+.jobdate.jobopenings{
+  color:#5e60d5;
+  opacity: .95;
 }
 @media (max-width:1440px) {
   .sixtabgrid,
@@ -2927,7 +2941,35 @@ a.footerlink:active {
     width: 1.74vw
   }
 }
+#prevBtn,
+#nextBtn {
+  display: none;
+}
 @media (max-width:768px) {
+  .wrapper {
+    position: relative; 
+    padding-left: 11%;
+    padding-right: 11%;
+  }
+  #prevBtn,
+  #nextBtn {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background: white; 
+    opacity: .7;
+    padding: 10px;         
+    font-size: 1rem;    
+    color: #333; 
+  }
+  #prevBtn { left: 0; }
+  #nextBtn { right: 0; }
+  #prevBtn:focus,
+  #nextBtn:focus {
+  box-shadow: 0 0 0 2px rgba(0,0,255,0.3);
+}
   .headerabgrid,
   .headergigrid,
   .headerhgrid {
@@ -3753,11 +3795,16 @@ a.footerlink:active {
     padding-left: 10%;
     padding-right: 10%
   }
-  .threeboxes2,
   .threeboxes3,
   .threeboxes4 {
     padding: 17% 10%;
     background-image: url("../images/svgs/mthreeboxborder.svg");
+    background-size: contain;
+    background-repeat: no-repeat
+  }
+  .threeboxes2 {
+    padding: 17% 10%;
+    background-image: url("../images/svgs/mthreeboxbordertall.svg");
     background-size: contain;
     background-repeat: no-repeat
   }
@@ -4266,7 +4313,7 @@ a.footerlink:active {
     line-height: 133%;
     letter-spacing: .08em;
     text-transform: uppercase;
-    opacity: 30%
+    opacity: 55%
   }
   .six {
     margin-left: 4.75%
@@ -4388,9 +4435,11 @@ a.footerlink:active {
   }
   .footergi3,
   .footergiimg,
-  .navbar,
-  .social {
+  .navbar{
     display: none
+  }
+  .social {
+    width: 5%;
   }
   .mfootergiimg {
     display: initial;
